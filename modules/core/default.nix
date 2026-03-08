@@ -29,7 +29,7 @@
     environment.systemPackages = with pkgs; [
       brave
       signal-desktop
-      logseq
+      standardnotes
       cryptomator
       ppsspp
       localsend
@@ -44,6 +44,7 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       vesktop
+      keepassxc
       btop
       anki
       sbctl

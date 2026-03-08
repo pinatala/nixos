@@ -18,8 +18,8 @@
       self.nixosModules.resolved
       self.nixosModules.xserver
       self.nixosModules.luna
-      self.nixosModules.nvf
       self.nixosModules.syncthing
+      self.nixosModules.nvf
       self.nixosModules.disko
     ];
   };
