@@ -20,6 +20,8 @@
       self.nixosModules.luna
       self.nixosModules.syncthing
       self.nixosModules.nvf
+      self.nixosModules.nvidia
+      self.nixosModules.gaming
       self.nixosModules.disko
     ];
   };
