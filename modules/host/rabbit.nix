@@ -22,6 +22,7 @@
       self.nixosModules.nvf
       self.nixosModules.nvidia
       self.nixosModules.gaming
+      self.nixosModules.flatpak
       self.nixosModules.disko
     ];
   };

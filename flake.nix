@@ -23,6 +23,9 @@
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flatpak = {
+      url = "github:in-a-dil-emma/declarative-flatpak/latest";
+    };
     impermanence = {
       url = "github:nix-community/impermanence";
     };
