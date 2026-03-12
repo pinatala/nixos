@@ -23,8 +23,8 @@
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flatpak = {
-      url = "github:in-a-dil-emma/declarative-flatpak/latest";
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak";
     };
     impermanence = {
       url = "github:nix-community/impermanence";

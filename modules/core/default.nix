@@ -25,23 +25,15 @@
     i18n.defaultLocale = "en_US.UTF-8";
 
     environment.systemPackages = with pkgs; [
-      brave
-      signal-desktop
       standardnotes
-      cryptomator
-      ppsspp
-      localsend
       fastfetch
       protonvpn-gui
-      qbittorrent
       tree
       wl-clipboard
-      libreoffice
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
-      keepassxc
       btop
       anki
       sbctl

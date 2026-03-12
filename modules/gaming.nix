@@ -21,10 +21,8 @@
         };
       };
     };
-
     environment.systemPackages = with pkgs; [
-      (bottles.override { removeWarningPopup = true; })
-      wineWowPackages.waylandFull
+      mangohud
     ];
   };
 }
