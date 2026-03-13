@@ -13,6 +13,8 @@
             name = "catppuccin";
             style = "mocha";
           };
+          terminal.toggleterm.enable = true;
+          telescope.enable = true;
           treesitter = {
             enable = true;
           };

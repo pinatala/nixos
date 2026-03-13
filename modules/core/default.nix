@@ -25,15 +25,13 @@
     i18n.defaultLocale = "en_US.UTF-8";
 
     environment.systemPackages = with pkgs; [
+      brave
+      vesktop
       standardnotes
       fastfetch
       protonvpn-gui
       tree
       wl-clipboard
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
       btop
       anki
       sbctl
