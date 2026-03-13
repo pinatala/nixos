@@ -1,10 +1,8 @@
 { inputs, ... }: {
-
   flake.nixosModules.firewall = { pkgs, ... }: {
-  # Firewall Configuration
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 53317 22000 ];
-  };  
-};
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 53317 22000 ];
+    };  
+  };
 }

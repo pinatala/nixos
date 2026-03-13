@@ -1,7 +1,6 @@
 { inputs, ... }: {
   flake.nixosModules.impermanence = { config, lib, ... }: {
     imports = [ inputs.impermanence.nixosModules.impermanence ];
-
     boot.initrd.systemd.services.rollback = {
       description = "Rollback root btrfs subvolume to blank snapshot";
       wantedBy = [ "initrd.target" ];
@@ -28,7 +27,6 @@
         umount /mnt
       '';
     };
-
     environment.persistence."/persist" = {
       directories = [
         "/etc/nixos"
@@ -44,7 +42,6 @@
         # Add more files you want to persist
       ];
     };
-
     # optional quality of life setting
     security.sudo.extraConfig = ''
       Defaults lecture = never

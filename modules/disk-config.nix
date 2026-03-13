@@ -5,7 +5,7 @@
       disk = {
         main = {
           type = "disk";
-          device = "/dev/disk/by-id/ata-V-GEN12SM22AR256SDK_256GB_VGAR2022121400000023"; # UBAH INI: Sesuaikan dengan disk target Anda (lsblk)
+          device = "/dev/disk/by-id/ata-V-GEN12SM22AR256SDK_256GB_VGAR2022121400000023"; # ls /dev/disk/by-id/
           content = {
             type = "gpt";
             partitions = {
@@ -29,11 +29,8 @@
                 content = {
                   type = "luks";
                   name = "crypted";
-                  # Best Practice: Matikan jika menggunakan HDD lama,
-                  # nyalakan untuk SSD demi performa (dengan sedikit risiko privasi metadata)
-                  extraOpenArgs = [ "--allow-discards" ]; 
+                  extraOpenArgs = [ "--allow-discards" ]; # Matikan jika menggunakan HDD
                   settings = {
-                    # Menggunakan keyFile untuk otomatisasi (opsional) atau password prompt (default)
                     allowDiscards = true;
                   };
                   content = {

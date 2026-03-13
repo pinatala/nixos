@@ -1,8 +1,5 @@
 { inputs, ... }: {
-
   flake.nixosModules.pipewire = { pkgs, ... }: {
-
-    # Pipewire
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {

@@ -1,5 +1,4 @@
 { inputs, self, ... }: {
-
   systems = [ "x86_64-linux" ];
   flake.nixosConfigurations.rabbit = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";

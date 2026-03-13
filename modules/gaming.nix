@@ -11,7 +11,6 @@
         driversi686Linux.mesa
       ];
     };
-
     programs.gamemode = {
       enable = true;
       enableRenice = true;
@@ -21,8 +20,5 @@
         };
       };
     };
-    environment.systemPackages = with pkgs; [
-      mangohud
-    ];
   };
 }

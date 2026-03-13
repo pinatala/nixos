@@ -1,8 +1,5 @@
 { inputs, ... }: {
-
   flake.nixosModules.resolved = { pkgs, ... }: {
-
-    # Resolved Configuration
     services.resolved = {
       enable = true;
       dnssec = "true";

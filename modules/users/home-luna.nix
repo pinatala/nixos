@@ -1,9 +1,6 @@
 { inputs, self, ... }: {
-
   flake.nixosModules.luna = { pkgs, ... }: {
-
     imports = [ inputs.home-manager.nixosModules.home-manager ];
-
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
@@ -30,7 +27,6 @@
         programs.home-manager.enable = true;
       };
     };
-
     users.users.luna = {
       isNormalUser = true;
       description = "Luna";

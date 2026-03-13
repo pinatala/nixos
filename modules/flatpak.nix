@@ -30,7 +30,7 @@
             ];
             sockets = [
               "wayland"
-              "fallback-x11"
+              "!fallback-x11"
               "!x11"
               "!pulseaudio"
               "!ssh-auth"
@@ -65,15 +65,15 @@
         };
         "org.cryptomator.Cryptomator" = {
           Context = {
-            sockets = [ "x11" "!wayland" "!fallback-x11" ];
+            sockets = [ "x11" "!wayland" ];
           };
           "Session Bus Policy" = {
             "org.freedesktop.secrets" = "talk";
           };
         };
         "org.telegram.desktop".Context.sockets = [ "pulseaudio" ];
-        "com.usebottles.bottles".Context.sockets = [ "fallback-x11" "!x11" "!wayland" "pulseaudio" ];
-        "org.ppsspp.PPSSPP".Context.sockets = [ "pulseaudio" ];
+        "com.usebottles.bottles".Context.sockets = [ "fallback-x11" "pulseaudio" "!wayland" ];
+        "org.ppsspp.PPSSPP".Context.sockets = [ "fallback-x11" "pulseaudio" "!wayland" ];
       };
     };
     xdg.portal = {

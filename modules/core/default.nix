@@ -1,6 +1,5 @@
 { inputs, ... }: {
   flake.nixosModules.defaultCore = { pkgs, ... }: {
-
     boot = {
       loader = {
         efi = {
@@ -12,18 +11,14 @@
           configurationLimit = 10;
         };
       };
-      resumeDevice = "/dev/mapper/crypted";
-      kernelParams = [ "resume_offset=533760" ];
+      resumeDevice = "/dev/mapper/crypted"; 
+      kernelParams = [ "resume_offset=533760" ]; # sudo btrfs inspect-internal map-swapfile -r /path/to/subvolumes/swapfile
       kernelPackages = pkgs.linuxPackages_6_18;
       initrd.systemd.enable = true;
     };
-
     networking.networkmanager.enable = true;
-
     time.timeZone = "Asia/Jakarta";
-
     i18n.defaultLocale = "en_US.UTF-8";
-
     environment.systemPackages = with pkgs; [
       brave
       vesktop
@@ -36,7 +31,6 @@
       anki
       sbctl
     ];
-
     networking.hostName = "rabbit";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "25.11";
