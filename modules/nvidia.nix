@@ -6,7 +6,6 @@
       "nvidia-persistenced"
     ];
     services.xserver.videoDrivers = [
-      "modesetting"
       "nvidia"
     ];
     hardware = {
@@ -16,11 +15,6 @@
         modesetting.enable = true;
         nvidiaSettings = true;
         open = false;
-        prime = {
-          sync.enable = true;
-          intelBusId = "PCI:0:2:0";
-          nvidiaBusId = "PCI:4:0:0";
-        };
       };
     };
   };
