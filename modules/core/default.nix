@@ -16,7 +16,11 @@
       kernelPackages = pkgs.linuxPackages_6_18;
       initrd.systemd.enable = true;
     };
-    networking.networkmanager.enable = true;
+    networking.networkmanager = {
+      enable = true;
+      wifi.scanRandMacAddress = true;
+      wifi.macAddress = "random";
+    };
     time.timeZone = "Asia/Jakarta";
     i18n.defaultLocale = "en_US.UTF-8";
     environment.systemPackages = with pkgs; [
