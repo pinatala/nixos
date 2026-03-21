@@ -10,6 +10,7 @@
             name = "catppuccin";
             style = "mocha";
           };
+          visuals.indent-blankline.enable = true;
           terminal.toggleterm.enable = true;
           telescope.enable = true;
           treesitter = {

@@ -34,6 +34,7 @@
       btop
       anki
       sbctl
+      calibre
     ];
     networking.hostName = "rabbit";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
