@@ -3,7 +3,7 @@
   flake.nixosConfigurations.rabbit = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules = [
-      ./../../hardware-configuration.nix
+      ./../../../hardware-configuration.nix
       self.nixosModules.defaultCore
       self.nixosModules.gnome
       self.nixosModules.secureBoot

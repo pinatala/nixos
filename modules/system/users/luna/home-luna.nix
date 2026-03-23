@@ -7,10 +7,10 @@
       extraSpecialArgs = { inherit inputs self; };
       users.luna = { pkgs, ... }: {
         imports = [
-          ./modules/git.nix
-          ./modules/ssh.nix
-          ./modules/sops.nix
-          ./modules/kitty.nix
+          ./../../../home/luna/git.nix
+          ./../../../home/luna/kitty.nix
+          ./../../../home/luna/sops.nix
+          ./../../../home/luna/ssh.nix
         ];
         home = {
           username = "luna";
