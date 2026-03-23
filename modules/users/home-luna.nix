@@ -4,7 +4,7 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      extraSpecialArgs = { inherit inputs self; };
+      #extraSpecialArgs = { inherit inputs self; };
       users.luna = { pkgs, ... }: {
         imports = [
           self.homeModules.git
