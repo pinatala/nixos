@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  flake.nixosModules.services = { self, ... }: {
+{ inputs, self, ... }: {
+  flake.nixosModules.services = { ... }: {
     imports = [
       self.nixosModules.btrfs
       self.nixosModules.fail2ban
