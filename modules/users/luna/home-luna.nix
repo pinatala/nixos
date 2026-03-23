@@ -4,13 +4,13 @@
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
-      #extraSpecialArgs = { inherit inputs self; };
+      extraSpecialArgs = { inherit inputs self; };
       users.luna = { pkgs, ... }: {
         imports = [
-          self.homeModules.git
-          self.homeModules.ssh
-          self.homeModules.sops
-          self.homeModules.kitty
+          ./modules/git.nix
+          ./modules/ssh.nix
+          ./modules/sops.nix
+          ./modules/kitty.nix
         ];
         home = {
           username = "luna";
