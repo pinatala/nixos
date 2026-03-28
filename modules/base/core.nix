@@ -16,10 +16,13 @@
       kernelPackages = pkgs.linuxPackages_6_18;
       initrd.systemd.enable = true;
     };
-    networking.networkmanager = {
-      enable = true;
-      wifi.scanRandMacAddress = true;
-      wifi.macAddress = "random";
+    networking = {
+      hostName = "rabbit";
+      networkmanager = {
+        enable = true;
+        wifi.scanRandMacAddress = true;
+        wifi.macAddress = "random";
+      };
     };
     time.timeZone = "Asia/Jakarta";
     i18n.defaultLocale = "en_US.UTF-8";
@@ -28,15 +31,18 @@
       vesktop
       standardnotes
       fastfetch
-      protonvpn-gui
+      proton-vpn
       tree
       wl-clipboard
       btop
       anki
       sbctl
       calibre
+      nautilus
     ];
-    networking.hostName = "rabbit";
+    programs.obs-studio = {
+      enable = true;
+    };
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "25.11";
   };

@@ -7,10 +7,10 @@
       extraSpecialArgs = { inherit inputs self; };
       users.luna = { pkgs, ... }: {
         imports = [
-          ./../../../home/luna/git.nix
-          ./../../../home/luna/kitty.nix
-          ./../../../home/luna/sops.nix
-          ./../../../home/luna/ssh.nix
+          ./../../homeModules/git.nix
+          ./../../homeModules/kitty.nix
+          ./../../homeModules/sops.nix
+          ./../../homeModules/ssh.nix
         ];
         home = {
           username = "luna";
@@ -22,7 +22,6 @@
              noto-fonts-cjk-sans
              noto-fonts-cjk-serif
              noto-fonts-color-emoji
-             literata
           ];
         };
         programs.home-manager.enable = true;
