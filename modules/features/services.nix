@@ -7,7 +7,6 @@
       firewall
       pipewire
       print
-      resolved
       syncthing
       xserver
     ];
