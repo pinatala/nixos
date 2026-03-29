@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.defaultCore = { pkgs, ... }: {
+  flake.nixosModules.core = { pkgs, ... }: {
     boot = {
       loader = {
         efi = {
@@ -16,33 +16,12 @@
       kernelPackages = pkgs.linuxPackages_6_18;
       initrd.systemd.enable = true;
     };
-    networking = {
-      hostName = "rabbit";
-      networkmanager = {
-        enable = true;
-        wifi.scanRandMacAddress = true;
-        wifi.macAddress = "random";
-      };
-    };
-    time.timeZone = "Asia/Jakarta";
-    i18n.defaultLocale = "en_US.UTF-8";
-    environment.systemPackages = with pkgs; [
-      brave
-      vesktop
-      standardnotes
-      fastfetch
-      proton-vpn
-      tree
-      wl-clipboard
-      btop
-      anki
-      sbctl
-      calibre
-      nautilus
-    ];
-    programs.obs-studio = {
+    services.btrfs.autoScrub = {
       enable = true;
+      interval = "weekly";
+      fileSystems = ["/"];
     };
+    networking.hostName = "rabbit";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "25.11";
   };

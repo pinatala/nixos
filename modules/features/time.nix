@@ -1,5 +1,5 @@
-{ inputs, ... }: {
-  flake.nixosModules.chrony = { pkgs, ... }: {
+{ config, self, ... }: {
+  flake.nixosModules.time = { pkgs, ... }: {
     services.chrony = {
       enable = true;
       enableNTS = true;
@@ -12,5 +12,6 @@
         server time.cifelli.xyz iburst nts
       '';
     };
+    time.timeZone = "Asia/Jakarta";
   };
 }

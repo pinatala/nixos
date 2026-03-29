@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.gdm = { pkgs, ... }: {
+  flake.nixosModules.loginManager = { pkgs, ... }: {
     services.displayManager.gdm.enable = true;
   };
 }

@@ -2,16 +2,11 @@
   flake.nixosConfigurations.rabbit = inputs.nixpkgs.lib.nixosSystem {
     modules = with self.nixosModules; [
       hardware
-      defaultCore
+      core
       desktop
-      secureBoot
-      zram
-      impermanence
-      services
+      desktopApps
+      extra
       luna
-      nvf
-      gaming
-      flatpak
       disko
     ];
   };
