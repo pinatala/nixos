@@ -23,20 +23,14 @@
         prefer-no-csd = null;
         window-rule = {
           focus-ring = {
-            width = 1;
-            active-color = "#89b4fa";
-            inactive-color = "#b4befe";
-          };
-          border = {
             width = 2;
-            active-color = "#89b4fa";
-            inactive-color = "#b4befe";
+            active-color = "#b4befe";
           };
-          geometry-corner-radius = 12;
+          geometry-corner-radius = 10;
           clip-to-geometry = true;
         };
         xwayland-satellite.path = lib.getExe config.pkgs.xwayland-satellite;
-        layout.gaps = 2;
+        layout.gaps = 4;
         binds = {
           "Mod+Return".spawn = config.terminal;
           "Print".spawn-sh = ''${lib.getExe config.pkgs.flameshot} gui'';

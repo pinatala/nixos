@@ -16,6 +16,8 @@
       cryptomator
       eog
       fileManager
+      keepassxc
+      localsend
       notes
       obs
       office
