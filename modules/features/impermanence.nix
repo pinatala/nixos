@@ -25,7 +25,6 @@
       directories = [
         "/etc/nixos"
         "/var/spool"
-        "/var/lib/flatpak"
         "/srv"
         "/etc/NetworkManager/system-connections"
         "/var/lib/bluetooth"

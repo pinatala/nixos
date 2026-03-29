@@ -10,13 +10,18 @@
       syncthing
       tree
       # GUI Programs
+      bottles
       brave
       calibre
+      cryptomator
       eog
       fileManager
-      flatpak
       notes
       obs
+      office
+      psp
+      signal
+      torrent
       vesktop
       vlc
       vpn
