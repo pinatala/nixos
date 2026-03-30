@@ -21,7 +21,8 @@
         ];
       };
       nvidia = {
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+        dynamicBoost.enable = true;
         nvidiaSettings = false;
         open = false;
         modesetting.enable = true;
