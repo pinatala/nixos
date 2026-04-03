@@ -29,6 +29,7 @@
         "/etc/NetworkManager/system-connections"
         "/var/lib/bluetooth"
         "/var/lib/sbctl"
+        "/key"
       ];
       files = [
         # "/etc/machine-id"

@@ -32,6 +32,9 @@
                   extraOpenArgs = [ "--allow-discards" ]; # Matikan jika menggunakan HDD
                   settings = {
                     allowDiscards = true;
+                    fallbackToPassword = false;
+                    keyFile = "/dev/sdc1";
+                    keyFileSize = 4096;
                   };
                   content = {
                     type = "btrfs";
