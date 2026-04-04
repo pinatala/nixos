@@ -7,8 +7,11 @@
       };
       settings = {
         general.reverseScroll = true;
-        sessionMenu = {
-          largeButtonsStyle = false;
+        sessionMenu.largeButtonsStyle = false;
+        nightLight = {
+          enabled = true;
+          forced = true;
+          autoSchedule = false;
         };
       };
       colors = { # Catppuccin Mocha
