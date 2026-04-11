@@ -12,6 +12,10 @@
       in {
         spawn-at-startup = [
           noctaliaExe
+          (lib.getExe (
+            config.pkgs.writeShellScriptBin "wallpaper"
+            "${lib.getExe config.pkgs.swaybg} -i ${./../features/wallpaper/disco-elysium-artwork.jpg} -m fill"
+          ))
         ];
         input = {
           keyboard.xkb.layout = "us";
@@ -42,6 +46,12 @@
           "Mod+Ctrl+F".fullscreen-window = null;
         };
       };
+    };
+  };
+  perSystem = {pkgs, ...}: {
+    packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
+      inherit pkgs;
+      imports = [self.wrapperModules.niri];
     };
   };
 }

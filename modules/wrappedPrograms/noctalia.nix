@@ -3,11 +3,13 @@
     packages.noctalia-shell = inputs.wrapper-modules.wrappers.noctalia-shell.wrap {
       inherit pkgs;
       env = {
-        "NOCTALIA_CACHE_DIR" = "/tmp/vj-noctalia-cache/";
+        "NOCTALIA_CACHE_DIR" = "/tmp/noctalia-cache/";
       };
       settings = {
         general.reverseScroll = true;
         sessionMenu.largeButtonsStyle = false;
+        wallpaper.enabled = false;
+        location.weatherEnabled = false;
         nightLight = {
           enabled = true;
           forced = true;
