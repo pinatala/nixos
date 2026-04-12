@@ -10,7 +10,6 @@
       syncthing
       tree
       # GUI Programs
-      bottles
       brave
       calibre
       cryptomator
