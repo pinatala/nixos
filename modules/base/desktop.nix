@@ -1,8 +1,7 @@
-{ config, self, ... }: {
-  flake.nixosModules.desktop = { pkgs, ... }: {
+{ self, ... }: {
+  flake.nixosModules.desktop = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.loginManager
-      self.nixosModules.wm
     ];
   };
 }

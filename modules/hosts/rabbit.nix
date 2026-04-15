@@ -8,6 +8,7 @@
       extra
       luna
       disko
+      kitty
     ];
   };
 }
