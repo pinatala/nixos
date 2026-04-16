@@ -1,5 +1,5 @@
-{ inputs, self, ... }: {
-  flake.nixosModules.luna = { pkgs, ... }: {
+{ self, inputs, ... }: {
+  flake.nixosModules.user = { lib, pkgs, config, ... }: {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
       useGlobalPkgs = true;
@@ -7,10 +7,9 @@
       extraSpecialArgs = { inherit inputs self; };
       users.luna = { pkgs, ... }: {
         imports = [
-#          ./../../homeModules/git.nix
-#          ./../../homeModules/kitty.nix
-#          ./../../homeModules/sops.nix
-#          ./../../homeModules/ssh.nix
+          self.homeModules.git
+          self.homeModules.sops
+          self.homeModules.ssh
         ];
         home = {
           username = "luna";
@@ -29,7 +28,7 @@
     };
     users.users.luna = {
       isNormalUser = true;
-      description = "Luna";
+      description = "luna's account";
       extraGroups = [ "networkmanager" "wheel" "gamemode" ];
       hashedPassword = "$6$amB55.SO6ApwkPyz$tvjJqab.kBV2cZf0CVJHAoGunMJCL1D3CU6uI4dJrD2AAtGrieAfW3J/142ocOHo9slYETriNlT.rbdU2PTz2/";
       packages = with pkgs; [
