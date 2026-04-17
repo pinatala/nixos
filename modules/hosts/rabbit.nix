@@ -5,38 +5,12 @@
     ];
   };
 
-  flake.nixosModules.main = { pkgs, lib, config, ... }: {
+  flake.nixosModules.main = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.hardware
-      self.nixosModules.user
-      self.nixosModules.disko
-      self.nixosModules.impermanence
-      self.nixosModules.gaming
-      self.nixosModules.secureBoot
-      self.nixosModules.zram
-      self.nixosModules.time
-      self.nixosModules.network
-      self.nixosModules.keyboard
-      self.nixosModules.print
-      self.nixosModules.pipewire
+      self.nixosModules.general
+      self.nixosModules.desktop
     ];
-    environment.systemPackages = [
-      pkgs.brave
-      pkgs.vesktop
-      pkgs.standardnotes
-      pkgs.fastfetch
-      pkgs.proton-vpn
-      pkgs.tree
-      pkgs.wl-clipboard
-      pkgs.btop
-      pkgs.anki
-      pkgs.sbctl
-      pkgs.calibre
-      pkgs.vlc
-      self.packages.${pkgs.stdenv.hostPlatform.system}.kitty
-      self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
-    ];
-
     boot = {
       loader = {
         efi = {
@@ -60,10 +34,10 @@
     };
     services.syncthing = {
       enable = true;
-      user = "luna";
+      user = "${self.user}";
       group = "users";
-      dataDir = "/home/luna";
-      configDir = "/home/luna/.config/syncthing";
+      dataDir = "/home/${self.user}";
+      configDir = "/home/${self.user}/.config/syncthing";
     };
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;

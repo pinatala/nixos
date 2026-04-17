@@ -1,38 +1,14 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.user = { lib, pkgs, config, ... }: {
-    imports = [ inputs.home-manager.nixosModules.home-manager ];
-    home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
-      extraSpecialArgs = { inherit inputs self; };
-      users.luna = { pkgs, ... }: {
-        imports = [
-          self.homeModules.git
-          self.homeModules.sops
-          self.homeModules.ssh
-        ];
-        home = {
-          username = "luna";
-          homeDirectory = "/home/luna";
-          stateVersion = "25.11";
-          packages = with pkgs; [
-             jetbrains-mono
-             noto-fonts
-             noto-fonts-cjk-sans
-             noto-fonts-cjk-serif
-             noto-fonts-color-emoji
-          ];
-        };
-        programs.home-manager.enable = true;
-      };
-    };
-    users.users.luna = {
-      isNormalUser = true;
-      description = "luna's account";
-      extraGroups = [ "networkmanager" "wheel" "gamemode" ];
-      hashedPassword = "$6$amB55.SO6ApwkPyz$tvjJqab.kBV2cZf0CVJHAoGunMJCL1D3CU6uI4dJrD2AAtGrieAfW3J/142ocOHo9slYETriNlT.rbdU2PTz2/";
-      packages = with pkgs; [
-      ];
-    };
+let
+  user = "luna";
+
+  stripHash = str:
+    if builtins.substring 0 1 str == "#"
+    then builtins.substring 1 (builtins.stringLength str - 1) str
+    else str;
+
+  userNoHash = builtins.mapAttrs (_: v: stripHash v) user;
+in {
+  flake = {
+    inherit user userNoHash;
   };
 }
