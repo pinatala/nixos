@@ -21,10 +21,15 @@
       pkgs.tree
       pkgs.wl-clipboard
       pkgs.btop
+      pkgs.keepassxc
+      pkgs.libreoffice
+      pkgs.cryptomator
+      pkgs.localsend
+      pkgs.signal-desktop
+      pkgs.qbittorrent
       pkgs.anki
       pkgs.sbctl
       pkgs.calibre
-      pkgs.vlc
       self.packages.${pkgs.stdenv.hostPlatform.system}.kitty
       self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
     ];

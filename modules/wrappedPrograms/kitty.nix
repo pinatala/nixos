@@ -12,8 +12,6 @@
         font_size = 15;
         font_family = "JetBrainsMono Nerd Font";
 
-#        cursor_text_color = "background";
-
         allow_remote_control = "yes";
         shell_integration = "enabled";
 
@@ -35,8 +33,16 @@
         ];
 
         background = self.theme.crust;
-        foreground = self.theme.pink;
+        foreground = self.theme.text;
         cursor = self.theme.rosewater;
+
+        mark1_background = self.theme.lavender;
+        mark1_foreground = self.theme.crust;
+        mark2_background = self.theme.mauve;
+        mark2_foreground = self.theme.crust;
+        mark3_background = self.theme.sapphire;
+        mark3_foreground = self.theme.crust;
+
         cursor_text_color = self.theme.crust;
 #        selection_foreground = self.theme.mauve;
         selection_background = self.theme.overlay2;
@@ -54,7 +60,7 @@
         color8 = self.theme.surface2;
         color15 = self.theme.subtext1;
         color16 = self.theme.peach;
-        color17 = self.theme.lavender;
+        color17 = self.theme.rosewater;
       };
     };
   };

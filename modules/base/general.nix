@@ -16,11 +16,6 @@
           homeDirectory = "/home/${self.user}";
           stateVersion = "25.11";
           packages = with pkgs; [
-             jetbrains-mono
-             noto-fonts
-             noto-fonts-cjk-sans
-             noto-fonts-cjk-serif
-             noto-fonts-color-emoji
           ];
         };
         programs.home-manager.enable = true;

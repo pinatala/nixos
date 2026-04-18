@@ -25,12 +25,19 @@
       url = "github:nix-community/lanzaboote/v1.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-    wrappers.url = "github:Lassulus/wrappers";
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-    impermanence.url = "github:nix-community/impermanence";
+    wrapper-modules = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    wrappers = {
+      url = "github:Lassulus/wrappers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
   };
 
   outputs = inputs: let

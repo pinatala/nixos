@@ -39,6 +39,13 @@
       dataDir = "/home/${self.user}";
       configDir = "/home/${self.user}/.config/syncthing";
     };
+    fonts.packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+    ];
     services.displayManager.gdm.enable = true;
     services.desktopManager.gnome.enable = true;
     networking.hostName = "rabbit";
