@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.general = { lib, pkgs, ... }: {
+  flake.nixosModules.homeManager = { pkgs, ... }: {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
       useGlobalPkgs = true;
@@ -7,9 +7,9 @@
       extraSpecialArgs = { inherit inputs self; };
       users.${self.user} = { pkgs, ... }: {
         imports = [
-          self.homeModules.git
-          self.homeModules.sops
-          self.homeModules.ssh
+          #./modules/git.nix
+          #./modules/sops.nix
+          #./modules/ssh.nix
         ];
         home = {
           username = "${self.user}";

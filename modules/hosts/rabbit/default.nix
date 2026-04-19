@@ -1,14 +1,15 @@
 { inputs, self, ... }: {
   flake.nixosConfigurations.rabbit = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      self.nixosModules.main
+      self.nixosModules.rabbit
     ];
   };
 
-  flake.nixosModules.main = { pkgs, config, ... }: {
+  flake.nixosModules.rabbit = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.hardware
-      self.nixosModules.general
+      self.nixosModules.diskRabbit
+      self.nixosModules.homeManager
       self.nixosModules.desktop
     ];
     boot = {

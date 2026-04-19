@@ -1,7 +1,6 @@
 { inputs, self, ... }: {
   flake.nixosModules.desktop = { pkgs, lib, config, ... }: {
     imports = [
-      self.nixosModules.disko
       self.nixosModules.impermanence
       self.nixosModules.gaming
       self.nixosModules.secureBoot
