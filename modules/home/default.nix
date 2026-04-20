@@ -7,9 +7,9 @@
       extraSpecialArgs = { inherit inputs self; };
       users.${self.user} = { pkgs, ... }: {
         imports = [
-          self.homeModules.git
-          self.homeModules.sops
-          self.homeModules.ssh
+          ./modules/_git.nix
+          ./modules/_sops.nix
+          ./modules/_ssh.nix
         ];
         home = {
           username = "${self.user}";
