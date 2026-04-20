@@ -1,4 +1,4 @@
-{ config, self, ... }: {
+{
   flake.nixosModules.network = { pkgs, ... }: {
     networking = {
       networkmanager = {

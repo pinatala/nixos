@@ -1,4 +1,4 @@
-{ config, self, ... }: {
+{
   flake.nixosModules.time = { pkgs, ... }: {
     services.chrony = {
       enable = true;

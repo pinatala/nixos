@@ -1,4 +1,3 @@
-{ inputs, ... }:
 {
   flake.nixosModules.zram = { lib, config, ... }: 
   let

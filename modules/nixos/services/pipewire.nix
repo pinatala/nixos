@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{
   flake.nixosModules.pipewire = { pkgs, ... }: {
     security.rtkit.enable = true;
     services = {

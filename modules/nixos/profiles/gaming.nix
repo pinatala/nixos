@@ -1,4 +1,4 @@
-{ inputs, ... }: {
+{
   flake.nixosModules.gaming = { lib, config, pkgs, ... }: {
     nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
       "nvidia-x11"

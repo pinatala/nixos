@@ -1,4 +1,4 @@
-{ inputs, self, ... }: {
+{ self, ... }: {
   flake.nixosModules.desktop = { pkgs, lib, config, ... }: {
     imports = [
       self.nixosModules.impermanence

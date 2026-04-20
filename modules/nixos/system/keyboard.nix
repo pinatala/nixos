@@ -1,4 +1,4 @@
-{ config, self, ... }: {
+{
   flake.nixosModules.keyboard = { pkgs, ... }: {
     services.xserver = {
       enable = true;
