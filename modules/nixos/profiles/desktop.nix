@@ -13,6 +13,7 @@
     ];
     environment.systemPackages = [
       pkgs.brave
+      pkgs.firefox
       pkgs.vesktop
       pkgs.standardnotes
       pkgs.fastfetch
