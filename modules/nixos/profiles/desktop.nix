@@ -1,9 +1,9 @@
 { self, ... }: {
   flake.nixosModules.desktop = { pkgs, lib, config, ... }: {
     imports = [
-      self.nixosModules.impermanence
+      #self.nixosModules.impermanence
       self.nixosModules.gaming
-      self.nixosModules.secureBoot
+      #self.nixosModules.secureBoot
       self.nixosModules.zram
       self.nixosModules.time
       self.nixosModules.network
@@ -12,24 +12,19 @@
       self.nixosModules.pipewire
     ];
     environment.systemPackages = [
-      pkgs.brave
-      pkgs.firefox
-      pkgs.vesktop
-      pkgs.standardnotes
-      pkgs.fastfetch
-      pkgs.proton-vpn
+      pkgs.google-chrome
       pkgs.tree
-      pkgs.wl-clipboard
-      pkgs.btop
-      pkgs.keepassxc
-      pkgs.libreoffice
-      pkgs.cryptomator
+      pkgs.rar
       pkgs.localsend
-      pkgs.signal-desktop
+      pkgs.ppsspp
+      pkgs.vlc
+      pkgs.opencode
+      pkgs.wl-clipboard
+      pkgs.localsend
       pkgs.qbittorrent
-      pkgs.anki
       pkgs.sbctl
-      pkgs.calibre
+      pkgs.nodejs_26
+      pkgs.wireguard-tools
       self.packages.${pkgs.stdenv.hostPlatform.system}.kitty
       self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
     ];

@@ -1,5 +1,5 @@
 keys:
-  - &my_user_age_key age1uwyz7ctcq8a85ryxzaajdtu8sr6qdej4424ynq0fpr5ygqs3zfzsvvru20
+  - &my_user_age_key age10gxwj45yceh589zxgf42kvupddqx7tszgt58fwjrkqh5m0fafehse27trv
 
 creation_rules:
   - path_regex: secrets.yaml$

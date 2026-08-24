@@ -5,8 +5,8 @@
       init.defaultBranch = "main";
       url."ssh://git@github.com/".insteadOf = "https://github.com/";
       user = {
-        name = "najika12";
-        email = "iqromaulanahadi@gmail.com";
+        name = "pinatala";
+        email = "ternaskb@gmail.com";
       };
     };
   };

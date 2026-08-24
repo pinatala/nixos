@@ -1,12 +1,5 @@
 {
   flake.nixosModules.gaming = { lib, config, pkgs, ... }: {
-    nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "nvidia-x11"
-      "nvidia-settings"
-      "nvidia-persistenced"
-      "steam"
-      "steam-unwrapped"
-    ];
     services.xserver.videoDrivers = [
       "nvidia"
     ];
@@ -54,7 +47,7 @@
       };
     };
     environment.systemPackages = with pkgs; [
-      (bottles.override { removeWarningPopup = true;})
+      #(bottles.override { removeWarningPopup = true;})
       mangohud
     ];
     programs.gamemode = {

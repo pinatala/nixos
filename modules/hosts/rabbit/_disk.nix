@@ -1,8 +1,5 @@
-{ inputs, ... }: {
-  flake.nixosModules.diskRabbit = {
-    imports = [ inputs.disko.nixosModules.disko ];
-    disko.devices = {
-      disk = {
+{
+      disko.devices.disk = {
         main = {
           type = "disk";
           device = "/dev/disk/by-id/ata-V-GEN12SM22AR256SDK_256GB_VGAR2022121400000023"; # ls /dev/disk/by-id/
@@ -32,7 +29,7 @@
                   extraOpenArgs = [ "--allow-discards" ]; # Matikan jika menggunakan HDD
                   settings = {
                     allowDiscards = true;
-                    #fallbackToPassword = true;
+                    fallbackToPassword = true;
                   };
                   content = {
                     type = "btrfs";
@@ -81,9 +78,9 @@
           };
         };
       };
-    };
+
     fileSystems."/persist".neededForBoot = true;
     fileSystems."/var/log".neededForBoot = true;
     fileSystems."/var/lib".neededForBoot = true;
-  };
-}
+  }
+

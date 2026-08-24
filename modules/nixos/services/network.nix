@@ -8,7 +8,7 @@
       };
       firewall = {
         enable = true;
-        allowedTCPPorts = [ 53317 22000 ];
+        allowedTCPPorts = [ 53317 ];
       };
     };
     services.fail2ban = {

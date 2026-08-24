@@ -23,7 +23,7 @@
      '';
     environment.persistence."/persist" = {
       directories = [
-        "/etc/nixos"
+        "/etc/wireguard"
         "/var/spool"
         "/srv"
         "/etc/NetworkManager/system-connections"

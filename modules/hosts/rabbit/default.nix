@@ -25,7 +25,7 @@
       };
       resumeDevice = "/dev/mapper/crypted"; 
       kernelParams = [ "resume_offset=533760" ]; # sudo btrfs inspect-internal map-swapfile -r /path/to/subvolumes/swapfile
-      kernelPackages = pkgs.linuxPackages_6_18;
+      kernelPackages = pkgs.linuxPackages_7_1;
       initrd.systemd.enable = true;
     };
     services.btrfs.autoScrub = {
@@ -47,10 +47,12 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
     ];
-    services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = true;
+    nixpkgs.config.allowUnfree = true;
+    hardware.bluetooth.enable = true;
+    services.displayManager.plasma-login-manager.enable = true;
+    services.desktopManager.plasma6.enable = true;
     networking.hostName = "rabbit";
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-    system.stateVersion = "25.11";
+    system.stateVersion = "26.05";
   };
 }
