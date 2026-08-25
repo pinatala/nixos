@@ -8,15 +8,12 @@
       args = lib.mkAfter (lib.optionals (config.shell != "") [config.shell]);
       settings = {
         enable_audio_bell = "no";
-
         font_size = 15;
         font_family = "JetBrainsMono Nerd Font";
-
         allow_remote_control = "yes";
         shell_integration = "enabled";
-
+        confirm_os_window_close = 0;
         cursor_trail = 3;
-
         map = [
           "alt+1 goto_tab 1"
           "alt+2 goto_tab 2"
@@ -44,11 +41,11 @@
         mark3_foreground = self.theme.crust;
 
         cursor_text_color = self.theme.crust;
-#        selection_foreground = self.theme.mauve;
+        #selection_foreground = self.theme.mauve;
         selection_background = self.theme.overlay2;
-#        active_foreground = self.theme.base0B;
-#        active_background = self.theme.base03;
-#        inactive_tab_background = self.theme.base01;
+        #active_foreground = self.theme.base0B;
+        #active_background = self.theme.base03;
+        #inactive_tab_background = self.theme.base01;
         color0 = self.theme.surface1;
         color1 = self.theme.red;
         color2 = self.theme.green;

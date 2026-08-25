@@ -13,6 +13,7 @@
     ];
     environment.systemPackages = [
       pkgs.google-chrome
+      pkgs.obsidian
       pkgs.tree
       pkgs.rar
       pkgs.localsend
@@ -25,8 +26,7 @@
       pkgs.sbctl
       pkgs.nodejs_26
       pkgs.wireguard-tools
-      self.packages.${pkgs.stdenv.hostPlatform.system}.kitty
-      self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
+      self.packages.${pkgs.stdenv.hostPlatform.system}.terminal
     ];
   };
 }
