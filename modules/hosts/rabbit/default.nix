@@ -47,6 +47,7 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
     ];
+    programs.partition-manager.enable = true;
     nixpkgs.config.allowUnfree = true;
     hardware.bluetooth.enable = true;
     services.displayManager.plasma-login-manager.enable = true;

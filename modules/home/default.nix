@@ -10,6 +10,7 @@
           ./modules/_git.nix
           ./modules/_sops.nix
           ./modules/_ssh.nix
+          ./modules/_firefox.nix
         ];
         home = {
           username = "${self.user}";

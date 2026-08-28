@@ -10,10 +10,12 @@
       self.nixosModules.keyboard
       self.nixosModules.print
       self.nixosModules.pipewire
+      #self.nixosModules.aria2
     ];
     environment.systemPackages = [
       pkgs.google-chrome
       pkgs.obsidian
+      pkgs.kdePackages.kget
       pkgs.tree
       pkgs.rar
       pkgs.localsend
