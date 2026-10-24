@@ -10,23 +10,12 @@
       self.nixosModules.keyboard
       self.nixosModules.print
       self.nixosModules.pipewire
-      #self.nixosModules.aria2
     ];
     environment.systemPackages = [
-      pkgs.google-chrome
-      pkgs.obsidian
-      pkgs.kdePackages.kget
+      pkgs.fastfetch
       pkgs.tree
       pkgs.rar
-      pkgs.localsend
-      pkgs.ppsspp
-      pkgs.vlc
-      pkgs.opencode
       pkgs.wl-clipboard
-      pkgs.localsend
-      pkgs.qbittorrent
-      pkgs.sbctl
-      pkgs.nodejs_26
       pkgs.wireguard-tools
       self.packages.${pkgs.stdenv.hostPlatform.system}.terminal
     ];

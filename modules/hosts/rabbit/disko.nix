@@ -42,24 +42,21 @@
                         mountpoint = "/";
                         mountOptions = ["subvol=root" "compress=zstd" "noatime"];
                       };
-                      "/root-blank" = {
-                        mountOptions = ["subvol=root-blank" "nodatacow" "noatime"];
-                      };
+                      #"/root-blank" = {
+                        #mountOptions = ["subvol=root-blank" "nodatacow" "noatime"];
+                      #};
                       "/home" = {
                         mountpoint = "/home";
                         mountOptions = ["subvol=home" "compress=zstd" "noatime"];
-                      };
-                      "/home-blank" = {
-                        mountOptions = ["subvol=home-blank" "nodatacow" "noatime"];
                       };
                       "/nix" = {
                         mountpoint = "/nix";
                         mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                       };
-                      "/persist" = {
-                        mountpoint = "/persist";
-                        mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
-                      };
+                      #"/persist" = {
+                        #mountpoint = "/persist";
+                        #mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
+                      #};
                       "/log" = {
                         mountpoint = "/var/log";
                         mountOptions = ["subvol=log" "compress=zstd" "noatime"];
@@ -82,7 +79,7 @@
         };
       };
     };
-    fileSystems."/persist".neededForBoot = true;
+    #fileSystems."/persist".neededForBoot = true;
     fileSystems."/var/log".neededForBoot = true;
     fileSystems."/var/lib".neededForBoot = true;
   };

@@ -29,6 +29,7 @@
         "/etc/NetworkManager/system-connections"
         "/var/lib/bluetooth"
         "/var/lib/sbctl"
+        #"/var/lib/flatpak"
         "/key"
       ];
       files = [

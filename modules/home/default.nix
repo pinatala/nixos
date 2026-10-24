@@ -10,12 +10,11 @@
           ./modules/_git.nix
           ./modules/_sops.nix
           ./modules/_ssh.nix
-          ./modules/_firefox.nix
         ];
         home = {
           username = "${self.user}";
           homeDirectory = "/home/${self.user}";
-          stateVersion = "25.11";
+          stateVersion = "26.05";
           packages = with pkgs; [
           ];
         };
@@ -25,7 +24,7 @@
     users.users.${self.user} = {
       isNormalUser = true;
       description = "${self.user}'s account";
-      extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+      extraGroups = [ "networkmanager" "wheel" ];
       password = "123";
       packages = with pkgs; [
       ];

@@ -5,7 +5,6 @@
         "rebuildBoot" = "sudo nixos-rebuild boot --flake .#rabbit";
         "rebuildSwitch" = "sudo nixos-rebuild switch --flake .#rabbit";
         "rebuildTest" = "sudo nixos-rebuild test --flake .#rabbit";
-        "9router" = ''export PATH="$HOME/.npm-global/bin:$PATH" && 9router'';
         "vpnOn" = "sudo wg-quick up wg0";
         "vpnOff" = "sudo wg-quick down wg0";
       };
