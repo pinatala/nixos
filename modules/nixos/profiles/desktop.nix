@@ -15,6 +15,7 @@
       pkgs.fastfetch
       pkgs.tree
       pkgs.rar
+      pkgs.unrar
       pkgs.wl-clipboard
       pkgs.wireguard-tools
       self.packages.${pkgs.stdenv.hostPlatform.system}.terminal
