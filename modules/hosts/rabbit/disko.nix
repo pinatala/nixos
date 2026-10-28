@@ -30,10 +30,10 @@
                   type = "luks";
                   name = "crypted";
                   extraOpenArgs = [ "--allow-discards" ]; # Matikan jika menggunakan HDD
-                  settings = {
-                    allowDiscards = true;
-                    #fallbackToPassword = true;
-                  };
+#                  settings = {
+#                    allowDiscards = true;
+#                    #fallbackToPassword = true;
+#                  };
                   content = {
                     type = "btrfs";
                     extraArgs = ["-L" "nixos" "-f"];
@@ -42,9 +42,6 @@
                         mountpoint = "/";
                         mountOptions = ["subvol=root" "compress=zstd" "noatime"];
                       };
-                      #"/root-blank" = {
-                        #mountOptions = ["subvol=root-blank" "nodatacow" "noatime"];
-                      #};
                       "/home" = {
                         mountpoint = "/home";
                         mountOptions = ["subvol=home" "compress=zstd" "noatime"];
@@ -53,10 +50,6 @@
                         mountpoint = "/nix";
                         mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                       };
-                      #"/persist" = {
-                        #mountpoint = "/persist";
-                        #mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
-                      #};
                       "/log" = {
                         mountpoint = "/var/log";
                         mountOptions = ["subvol=log" "compress=zstd" "noatime"];
@@ -66,7 +59,7 @@
                         mountOptions = ["subvol=lib" "compress=zstd" "noatime"];
                       };
                       "/persist/swap" = {
-                        mountpoint = "/persist/swap";
+                        mountpoint = "/persists/swap";
                         mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
                         swap.swapfile.size = "8G";
                       };
@@ -79,7 +72,6 @@
         };
       };
     };
-    #fileSystems."/persist".neededForBoot = true;
     fileSystems."/var/log".neededForBoot = true;
     fileSystems."/var/lib".neededForBoot = true;
   };
