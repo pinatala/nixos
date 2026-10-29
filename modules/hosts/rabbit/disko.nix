@@ -29,11 +29,9 @@
                 content = {
                   type = "luks";
                   name = "crypted";
-                  extraOpenArgs = [ "--allow-discards" ]; # Matikan jika menggunakan HDD
-#                  settings = {
-#                    allowDiscards = true;
-#                    #fallbackToPassword = true;
-#                  };
+                  settings = {
+                    allowDiscards = true;
+                  };
                   content = {
                     type = "btrfs";
                     extraArgs = ["-L" "nixos" "-f"];
@@ -57,11 +55,6 @@
                       "/lib" = {
                         mountpoint = "/var/lib";
                         mountOptions = ["subvol=lib" "compress=zstd" "noatime"];
-                      };
-                      "/persist/swap" = {
-                        mountpoint = "/persists/swap";
-                        mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
-                        swap.swapfile.size = "8G";
                       };
                     };
                   };

@@ -4,7 +4,7 @@
       #self.nixosModules.impermanence
       self.nixosModules.gaming
       #self.nixosModules.secureBoot
-      self.nixosModules.zram
+      #self.nixosModules.zram
       self.nixosModules.time
       self.nixosModules.network
       self.nixosModules.keyboard
