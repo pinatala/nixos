@@ -1,5 +1,6 @@
 {
-      disko.devices.disk = {
+  disko.devices = {
+      disk = {
         main = {
           type = "disk";
           device = "/dev/disk/by-id/ata-V-GEN12SM22AR256SDK_256GB_VGAR2022121400000023"; # ls /dev/disk/by-id/
@@ -26,10 +27,8 @@
                 content = {
                   type = "luks";
                   name = "crypted";
-                  extraOpenArgs = [ "--allow-discards" ]; # Matikan jika menggunakan HDD
                   settings = {
                     allowDiscards = true;
-                    fallbackToPassword = true;
                   };
                   content = {
                     type = "btrfs";
@@ -39,9 +38,6 @@
                         mountpoint = "/";
                         mountOptions = ["subvol=root" "compress=zstd" "noatime"];
                       };
-                      "/root-blank" = {
-                        mountOptions = ["subvol=root-blank" "nodatacow" "noatime"];
-                      };
                       "/home" = {
                         mountpoint = "/home";
                         mountOptions = ["subvol=home" "compress=zstd" "noatime"];
@@ -49,10 +45,6 @@
                       "/nix" = {
                         mountpoint = "/nix";
                         mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
-                      };
-                      "/persist" = {
-                        mountpoint = "/persist";
-                        mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
                       };
                       "/log" = {
                         mountpoint = "/var/log";
@@ -62,11 +54,6 @@
                         mountpoint = "/var/lib";
                         mountOptions = ["subvol=lib" "compress=zstd" "noatime"];
                       };
-                      "/persist/swap" = {
-                        mountpoint = "/persist/swap";
-                        mountOptions = ["subvol=swap" "noatime" "nodatacow" "compress=no"];
-                        swap.swapfile.size = "8G";
-                      };
                     };
                   };
                 };
@@ -75,9 +62,7 @@
           };
         };
       };
-
-    fileSystems."/persist".neededForBoot = true;
+    };
     fileSystems."/var/log".neededForBoot = true;
     fileSystems."/var/lib".neededForBoot = true;
   }
-

@@ -8,8 +8,10 @@
         enable = true;
         enable32Bit = true;
         extraPackages = with pkgs; [
+          libva-vdpau-driver
           intel-media-driver
           libvdpau-va-gl
+          nvidia-vaapi-driver
         ];
         extraPackages32 = with pkgs; [
           driversi686Linux.mesa
