@@ -2,11 +2,14 @@
   flake.nixosModules.homeManager = { pkgs, ... }: {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
-      useGlobalPkgs = true;
+      #useGlobalPkgs = true;
       useUserPackages = true;
       extraSpecialArgs = { inherit inputs self; };
       users.${self.user} = { pkgs, ... }: {
         imports = [
+          ./modules/_stylix.nix
+          ./modules/_kitty.nix
+          ./modules/_zsh.nix
           ./modules/_git.nix
           ./modules/_sops.nix
           ./modules/_ssh.nix
