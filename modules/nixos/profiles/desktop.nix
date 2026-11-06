@@ -3,7 +3,6 @@
     imports = [
       self.nixosModules.gaming
       #self.nixosModules.zram
-      #self.nixosModules.stylix
       self.nixosModules.time
       self.nixosModules.network
       self.nixosModules.keyboard
