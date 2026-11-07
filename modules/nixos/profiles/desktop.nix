@@ -25,6 +25,7 @@
       pkgs.rar
       pkgs.unrar
       pkgs.wl-clipboard
+      pkgs.sbctl
       self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
     ];
   };

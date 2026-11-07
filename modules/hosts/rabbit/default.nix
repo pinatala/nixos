@@ -18,11 +18,8 @@
           efiSysMountPoint = "/boot";
           canTouchEfiVariables = true;
         };
-        grub = {
-          enable = true;
-          device = "nodev";
-          efiSupport = true;
-        };
+        limine.enable = true;
+        limine.secureBoot.enable = true;
       };
       resumeDevice = "/dev/mapper/crypted"; 
       kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
