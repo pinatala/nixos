@@ -2,7 +2,6 @@
   flake.nixosModules.homeManager = { pkgs, ... }: {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
-      #useGlobalPkgs = true;
       useUserPackages = true;
       extraSpecialArgs = { inherit inputs self; };
       users.${self.user} = { pkgs, ... }: {
@@ -24,11 +23,13 @@
         programs.home-manager.enable = true;
       };
     };
+    users.mutableUsers = false;
     users.users.${self.user} = {
       isNormalUser = true;
       description = "${self.user}'s account";
-      extraGroups = [ "networkmanager" "wheel" ];
-      password = "123";
+      extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+      hashedPassword = "$y$j9T$GcsKnUBjJUttltpTFEl4b.$mBKEArl8/I1F02y8JQDVjCOUtSJQrhU6QwF2Q1IXDz9";
+      #password = "123";
       packages = with pkgs; [
       ];
     };

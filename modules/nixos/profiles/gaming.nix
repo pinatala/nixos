@@ -52,14 +52,14 @@
 #      #(bottles.override { removeWarningPopup = true;})
 #      mangohud
 #    ];
-#    programs.gamemode = {
-#      enable = true;
-#      enableRenice = true;
-#      settings = {
-#        general = {
-#          renice = 10;
-#        };
-#      };
-#    };
+    programs.gamemode = {
+      enable = true;
+      enableRenice = true;
+      settings = {
+        general = {
+          renice = 10;
+        };
+      };
+    };
   };
 }
