@@ -44,7 +44,6 @@
       noto-fonts-color-emoji
     ];
     programs.partition-manager.enable = true;
-    services.flatpak.enable = true;
     nixpkgs.config.allowUnfree = true;
     hardware.bluetooth.enable = true;
     services.desktopManager.plasma6.enable = true;

@@ -2,7 +2,7 @@
   flake.nixosModules.desktop = { pkgs, lib, config, ... }: {
     imports = [
       self.nixosModules.gaming
-      #self.nixosModules.zram
+      self.nixosModules.flatpak
       self.nixosModules.time
       self.nixosModules.network
       self.nixosModules.keyboard

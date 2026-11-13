@@ -2,7 +2,7 @@
   programs.kitty = lib.mkForce {
     enable = true;
     settings = {
-      font_size = 15;
+      font_size = 14;
       font_family = "JetBrainsMono Nerd Font";
       shell_integration = "enabled";
       confirm_os_window_close = 0;

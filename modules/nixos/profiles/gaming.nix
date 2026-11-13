@@ -2,6 +2,7 @@
   flake.nixosModules.gaming = { lib, config, pkgs, ... }: {
     services.xserver.videoDrivers = [
       "nvidia"
+      "modesetting"
     ];
     hardware = {
       graphics = {
