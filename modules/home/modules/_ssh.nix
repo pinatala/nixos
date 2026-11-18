@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, self, ... }: {
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -7,7 +7,7 @@
       "github.com" = {
         hostname = "github.com";
         user = "git";
-        identityFile = config.sops.secrets.github_ssh_key.path;
+        identityFile = "/home/${self.user}/.config/sops-nix/secrets/github_ssh_key";
       };
     };
   };

@@ -3,6 +3,8 @@
     imports = [
       self.nixosModules.gaming
       self.nixosModules.flatpak
+      self.nixosModules.impermanence
+      self.nixosModules.zram
       self.nixosModules.time
       self.nixosModules.network
       self.nixosModules.keyboard
@@ -20,6 +22,7 @@
       pkgs.gst_all_1.gst-libav
       pkgs.libaom
 
+      # cli
       pkgs.fastfetch
       pkgs.tree
       pkgs.rar

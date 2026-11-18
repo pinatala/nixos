@@ -22,6 +22,7 @@
         limine.secureBoot.enable = true;
       };
       resumeDevice = "/dev/mapper/crypted"; 
+      kernelParams = [ "resume_offset=533760" ]; # sudo btrfs inspect-internal map-swapfile -r /path/to/subvolumes/swapfile
       kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
     };
     services.btrfs.autoScrub = {

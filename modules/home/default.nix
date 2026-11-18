@@ -29,7 +29,6 @@
       description = "${self.user}'s account";
       extraGroups = [ "networkmanager" "wheel" "gamemode" ];
       hashedPassword = "$y$j9T$GcsKnUBjJUttltpTFEl4b.$mBKEArl8/I1F02y8JQDVjCOUtSJQrhU6QwF2Q1IXDz9"; # mkpasswd -m yescrypt
-      #password = "123";
       packages = with pkgs; [
       ];
     };
