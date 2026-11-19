@@ -23,7 +23,7 @@
       };
       resumeDevice = "/dev/mapper/crypted"; 
       kernelParams = [ "resume_offset=533760" ]; # sudo btrfs inspect-internal map-swapfile -r /path/to/subvolumes/swapfile
-      kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
+      kernelPackages = pkgs.linuxPackages_6_18;
     };
     services.btrfs.autoScrub = {
       enable = true;
@@ -44,6 +44,7 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
     ];
+    services.udisks2.enable = true;
     programs.partition-manager.enable = true;
     nixpkgs.config.allowUnfree = true;
     hardware.bluetooth.enable = true;

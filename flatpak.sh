@@ -18,7 +18,7 @@ APPS=(
     "org.localsend.localsend_app|flathub"
     "org.rncbc.qpwgraph|flathub"
     "org.videolan.VLC|flathub"
-    "io.gitlab.librewolf-community|flathub"
+    "net.mullvad.MullvadBrowser|flathub"
 )
 
 for APP in "${APPS[@]}"; do
