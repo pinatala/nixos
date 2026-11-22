@@ -1,35 +1,16 @@
 { self, ... }: {
-  flake.nixosModules.desktop = { pkgs, lib, config, ... }: {
+  flake.nixosModules.desktop = { ... }: {
     imports = [
-      self.nixosModules.gaming
-      self.nixosModules.flatpak
-      self.nixosModules.impermanence
-      self.nixosModules.zram
-      self.nixosModules.time
-      self.nixosModules.network
+      self.nixosModules.plasma
+      self.nixosModules.fonts
+      self.nixosModules.bluetooth
       self.nixosModules.keyboard
-      self.nixosModules.print
       self.nixosModules.pipewire
-    ];
-    environment.systemPackages = [
-      # codec
-      pkgs.ffmpeg-full
-      pkgs.gst_all_1.gstreamer
-      pkgs.gst_all_1.gst-plugins-base
-      pkgs.gst_all_1.gst-plugins-good
-      pkgs.gst_all_1.gst-plugins-bad
-      pkgs.gst_all_1.gst-plugins-ugly
-      pkgs.gst_all_1.gst-libav
-      pkgs.libaom
-
-      # cli
-      pkgs.fastfetch
-      pkgs.tree
-      pkgs.rar
-      pkgs.unrar
-      pkgs.wl-clipboard
-      pkgs.sbctl
-      self.packages.${pkgs.stdenv.hostPlatform.system}.nvf
+      self.nixosModules.print
+      self.nixosModules.flatpak
+      self.nixosModules.gaming
+      self.nixosModules.codecs
+      self.nixosModules.cli
     ];
   };
 }

@@ -5,53 +5,22 @@
     ];
   };
 
-  flake.nixosModules.rabbit = { pkgs, config, ... }: {
+  flake.nixosModules.rabbit = { ... }: {
     imports = [
-      self.nixosModules.hardware
+      self.nixosModules.hardwareRabbit
       self.nixosModules.diskRabbit
-      self.nixosModules.homeManager
+      self.nixosModules.graphicsRabbit
+      self.nixosModules.base
       self.nixosModules.desktop
+      self.nixosModules.users
+      self.nixosModules.homeManager
+      self.nixosModules.syncthing
     ];
     boot = {
-      loader = {
-        efi = {
-          efiSysMountPoint = "/boot";
-          canTouchEfiVariables = true;
-        };
-        limine.enable = true;
-        limine.secureBoot.enable = true;
-      };
       resumeDevice = "/dev/mapper/crypted"; 
       kernelParams = [ "resume_offset=533760" ]; # sudo btrfs inspect-internal map-swapfile -r /path/to/subvolumes/swapfile
-      kernelPackages = pkgs.linuxPackages_6_18;
     };
-    services.btrfs.autoScrub = {
-      enable = true;
-      interval = "weekly";
-      fileSystems = ["/"];
-    };
-    services.syncthing = {
-      enable = true;
-      user = "${self.user}";
-      group = "users";
-      dataDir = "/home/${self.user}";
-      configDir = "/home/${self.user}/.config/syncthing";
-    };
-    fonts.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-    ];
-    services.udisks2.enable = true;
-    programs.partition-manager.enable = true;
-    nixpkgs.config.allowUnfree = true;
-    hardware.bluetooth.enable = true;
-    services.desktopManager.plasma6.enable = true;
-    services.displayManager.plasma-login-manager.enable = true;
     networking.hostName = "rabbit";
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "26.05";
   };
 }

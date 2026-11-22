@@ -9,7 +9,6 @@
     };
     config = {
       custom.zram.enable = true;
-      boot.tmp.useTmpfs = true;
       zramSwap = lib.mkIf cfg.enable {
         enable = true;
         algorithm = "zstd";

@@ -1,4 +1,4 @@
-{ self, inputs, ... }: {
+{
   flake.nixosModules.nvf = { pkgs, config, ... }: {
     config.vim = {
       theme = {
@@ -18,13 +18,5 @@
         };
       };
     };
-  };
-  perSystem = { pkgs, config, ... }: {
-    packages.nvf = (inputs.nvf.lib.neovimConfiguration {
-      inherit pkgs;
-      modules = [
-        self.nixosModules.nvf
-      ];
-    }).neovim;
   };
 }

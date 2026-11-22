@@ -42,8 +42,5 @@
         "/etc/plasmalogin.conf"
       ];
     };
-    security.sudo.extraConfig = ''
-      Defaults lecture = never
-    '';
   };
 }

@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.hardware = { config, lib, pkgs, modulesPath, ... }:
+  flake.nixosModules.hardwareRabbit = { config, lib, pkgs, modulesPath, ... }:
 
 {
   imports =
