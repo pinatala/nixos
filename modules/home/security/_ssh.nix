@@ -7,7 +7,7 @@
       "github.com" = {
         hostname = "github.com";
         user = "git";
-        identityFile = "/home/${self.user}/.config/sops-nix/secrets/github_ssh_key";
+        identityFile = config.sops.secrets.github_ssh_key.path;
       };
     };
   };
