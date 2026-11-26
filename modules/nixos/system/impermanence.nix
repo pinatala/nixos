@@ -38,9 +38,6 @@
       directories = [
         { directory = "/etc/NetworkManager/system-connections"; mode = "0600"; }
       ];
-      files = [
-        "/etc/plasmalogin.conf"
-      ];
     };
   };
 }

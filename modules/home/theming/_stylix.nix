@@ -8,9 +8,14 @@
       hash = "sha256-j6AonV/8BeuceGFhpCwTY0T4BmCLXfw67fnQ99+oGyc="; # openssl dgst -sha256 -binary file_name | openssl base64 -A
     };
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    targets = {
-      kde.enable = true;
-      kitty.enable = true;
+    targets.gnome = {
+      enable = true;
+      colors.enable = false;
+      fonts.enable = false;
+      imageScalingMode.enable = false;
+      inputs.enable = false;
+      polarity.enable = false;
+      image.enable = true;
     };
   };
 }

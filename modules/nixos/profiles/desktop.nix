@@ -1,7 +1,7 @@
 { self, ... }: {
   flake.nixosModules.desktop = { ... }: {
     imports = [
-      self.nixosModules.plasma
+      self.nixosModules.gnome
       self.nixosModules.fonts
       self.nixosModules.bluetooth
       self.nixosModules.keyboard

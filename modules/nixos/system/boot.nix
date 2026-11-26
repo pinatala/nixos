@@ -9,7 +9,7 @@
         limine.enable = true;
         limine.secureBoot.enable = true;
       };
-      kernelPackages = pkgs.linuxPackages_6_18;
+      kernelPackages = pkgs.linuxPackages_latest;
     };
   };
 }

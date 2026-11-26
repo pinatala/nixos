@@ -7,8 +7,9 @@
       users.${self.user} = { ... }: {
         imports = [
           ./_core.nix
+          ./theming/_gnome.nix
           ./theming/_stylix.nix
-          ./programs/_kitty.nix
+          ./programs/_ghostty.nix
           ./programs/_zsh.nix
           ./programs/_git.nix
           ./security/_sops.nix

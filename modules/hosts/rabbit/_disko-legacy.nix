@@ -46,9 +46,6 @@
                         mountpoint = "/home";
                         mountOptions = ["subvol=home" "compress=zstd" "noatime"];
                       };
-                      "/home-blank" = {
-                        mountOptions = ["subvol=home-blank" "nodatacow" "noatime"];
-                      };
                       "/nix" = {
                         mountpoint = "/nix";
                         mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
@@ -79,8 +76,8 @@
         };
       };
     };
-    fileSystems."/home".neededForBoot = true;
     fileSystems."/persist".neededForBoot = true;
     fileSystems."/var/log".neededForBoot = true;
     fileSystems."/var/lib".neededForBoot = true;
   }
+

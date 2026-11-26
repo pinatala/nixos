@@ -9,7 +9,7 @@ echo "===================================="
 APPS=(
     "ai.storyteller.wordcraft|flatpark"
     "com.bitwarden.desktop|flathub"
-    "com.brave.Browser|flathub"
+    "org.mozilla.firefox|flathub"
     "com.github.tchx84.Flatseal|flathub"
     "com.vysp3r.ProtonPlus|flathub"
     "net.audiorelay.AudioRelay|flathub"
@@ -18,7 +18,6 @@ APPS=(
     "org.localsend.localsend_app|flathub"
     "org.rncbc.qpwgraph|flathub"
     "org.videolan.VLC|flathub"
-    "net.mullvad.MullvadBrowser|flathub"
 )
 
 for APP in "${APPS[@]}"; do
