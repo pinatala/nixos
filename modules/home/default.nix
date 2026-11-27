@@ -1,21 +1,15 @@
-{ self, inputs, ... }: {
+{ self, inputs, lib, ... }: {
+  # Agregator: otomatis memuat SEMUA flake.homeModules.* (kecuali dirinya sendiri).
+  flake.homeModules.default = {
+    imports = lib.attrValues (removeAttrs self.homeModules [ "default" ]);
+  };
+
+  # Integrasi sebagai modul NixOS.
   flake.nixosModules.homeManager = { ... }: {
     imports = [ inputs.home-manager.nixosModules.home-manager ];
     home-manager = {
       useUserPackages = true;
-      extraSpecialArgs = { inherit inputs self; };
-      users.${self.user} = { ... }: {
-        imports = [
-          ./_core.nix
-          ./theming/_gnome.nix
-          ./theming/_stylix.nix
-          ./programs/_ghostty.nix
-          ./programs/_zsh.nix
-          ./programs/_git.nix
-          ./security/_sops.nix
-          ./security/_ssh.nix
-        ];
-      };
+      users.${self.user}.imports = [ self.homeModules.default ];
     };
   };
 }

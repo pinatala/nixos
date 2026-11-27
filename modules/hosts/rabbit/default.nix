@@ -7,14 +7,12 @@
 
   flake.nixosModules.rabbit = { ... }: {
     imports = [
+      # khusus host ini
       self.nixosModules.hardwareRabbit
       self.nixosModules.diskRabbit
       self.nixosModules.graphicsRabbit
-      self.nixosModules.base
-      self.nixosModules.desktop
-      self.nixosModules.users
-      self.nixosModules.homeManager
-      self.nixosModules.syncthing
+      # semua modul umum (system, desktop, services, users, homeManager, ...)
+      self.nixosModules.default
     ];
     boot = {
       resumeDevice = "/dev/mapper/crypted"; 
